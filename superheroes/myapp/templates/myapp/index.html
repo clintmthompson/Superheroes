@@ -12,8 +12,9 @@
 <ul>
     {% for superheroes in all_superheroes %}
     <li><h2>{{superheroes.name}}</h2>
-    <a href="{% url 'myapp:detail' superheroes.id %}">See more info</a></li>
+    <a href="{% url 'myapp:detail' superheroes.id %}">See Full Details</a></li>
     {% endfor %}
 </ul>
+<h2><a href="/myapp/new/">Create Hero</a></h2>
 </body>
 </html>
