@@ -12,6 +12,9 @@ def index(request):
     return render(request, 'myapp/index.html', context)
 
 
-def detail(request, superheroes_id):
-    result = Superheroes.objects.get(id=superheroes_id)
-    return result
+def detail(request, myapp_id):
+    result = Superheroes.objects.get(id=myapp_id)
+    context = {
+        'result': result
+    }
+    return render(request, 'myapp/details.html', context)
