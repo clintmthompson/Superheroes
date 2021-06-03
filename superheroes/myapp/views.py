@@ -20,6 +20,7 @@ def detail(request, myapp_id):
     }
     return render(request, 'myapp/details.html', context)
 
+
 def create(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -32,3 +33,8 @@ def create(request):
         return HttpResponseRedirect(reverse('myapp:index'))
     else:
         return render(request, 'myapp/create.html')
+
+
+def delete(request, myapp_id):
+    Superheroes.objects.filter(id= myapp_id).delete()
+    return HttpResponseRedirect(reverse('myapp:index'))
