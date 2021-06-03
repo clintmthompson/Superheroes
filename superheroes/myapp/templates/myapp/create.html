@@ -6,8 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+    body {
+        background-color: lightgrey;
+        padding-top: 40px
+    }
+    </style>
 </head>
 <body>
+
+<div class="d-flex justify-content-center">
+    <h1>
+        Create new superhero below
+    </h1>
+</div>
+
+<div class="d-flex justify-content-center">
 <form action="{% url 'myapp:create_hero' %}" method="post">
     {% csrf_token %}
     Name:<input type="text" name="name" id="name"><br>
@@ -17,5 +32,7 @@
     Catch Phrase:<input type="text" name="catch_phrase" id="catch_phrase"><br>
     <input type="submit" value="Add new hero">
 </form>
+</div>
+
 </body>
 </html>

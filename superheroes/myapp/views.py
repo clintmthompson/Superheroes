@@ -38,3 +38,5 @@ def create(request):
 def delete(request, myapp_id):
     Superheroes.objects.filter(id= myapp_id).delete()
     return HttpResponseRedirect(reverse('myapp:index'))
+
+
