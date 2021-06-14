@@ -40,6 +40,7 @@
                 <li><h2>{{superheroes.name}}</h2>
                 <a href="{% url 'myapp:detail' superheroes.id %}">See Full Details</a></li>
                 <a href="{% url 'myapp:delete' superheroes.id %}">Delete Hero</a>
+                <a href="{% url 'myapp:edit' superheroes.id %}">Edit Hero</a>
                 {% endfor %}
             </ul>
     </div>

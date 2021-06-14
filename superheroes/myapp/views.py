@@ -40,3 +40,21 @@ def delete(request, myapp_id):
     return HttpResponseRedirect(reverse('myapp:index'))
 
 
+def edit(request, myapp_id):
+    if request.method == 'POST':
+        hero_edit = Superheroes.objects.get(id=myapp_id)
+        hero_edit.name = request.POST.get('name')
+        hero_edit.alter_ego = request.POST.get('alter_ego')
+        hero_edit.primary_ability = request.POST.get('primary_ability')
+        hero_edit.secondary_ability = request.POST.get('secondary_ability')
+        hero_edit.catch_phrase = request.POST.get('catch_phrase')
+        hero_edit.save()
+        return HttpResponseRedirect(reverse('myapp:index'))
+    else:
+        hero_edit = Superheroes.objects.get(id=myapp_id)
+        context = {
+            'hero': hero_edit
+        }
+        return render(request, 'myapp/edit.html')
+
+
